@@ -25,11 +25,10 @@ public class AndroidLauncher extends AndroidApplication {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-
 		//强制竖屏
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//通过程序改变屏
 		AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
-		//OpenGL ES 1.x support removed from libgdx(http://www.badlogicgames.com/wordpress/?p=3311)
+		// OpenGL ES 1.x support removed from libgdx(http://www.badlogicgames.com/wordpress/?p=3311)
 		// cfg.useGL20 = false;//54wall old
 		// we need to change the default pixel format - since it does not
 		// include an alpha channel
@@ -39,6 +38,8 @@ public class AndroidLauncher extends AndroidApplication {
 		cfg.g = 8;
 		cfg.b = 8;
 		cfg.a = 8;
+		cfg.hideStatusBar = false;
+
 		DeviceCameraControl cameraControl = new AndroidDeviceCameraController(
 				this);
 		//拍照程序在AndroidDeviceCameraController，通过cameraControl传给MyGdxGame0606，进入LibGDX
